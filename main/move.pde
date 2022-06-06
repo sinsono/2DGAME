@@ -1,3 +1,8 @@
+int jumping=0;
+final int usual=0;
+final int jump1=1;
+final int jump2=2;
+
 void move()
 {
   if (hmovem.get(0)==true)
@@ -8,15 +13,22 @@ void move()
   {
     x-=5;
   }
+  if (fx+x<=er/2)
+  {
+    x=er/2-width/12;
+  }
+  if (fx+x>=width-er/2)
+  {
+    x=width-er/2-width/12;
+  }
 
-
-  switch(status) {
+  switch(jumping) {
 
   case usual:
 
     if (keyPressed && keyCode==UP)
     {
-      status=jump1;
+      jumping=jump1;
       keyPressed=false;
     }
 
@@ -27,7 +39,7 @@ void move()
 
     if (keyPressed && keyCode==UP)
     {
-      status=jump2;
+      jumping=jump2;
       vy=15;
       keyPressed=false;
     }
@@ -39,7 +51,7 @@ void move()
     {
       y=0;
       vy=15;
-      status=usual;
+      jumping=usual;
     }
 
     break;
@@ -55,7 +67,7 @@ void move()
     {
       y=0;
       vy=15;
-      status=usual;
+      jumping=usual;
     }
 
     break;

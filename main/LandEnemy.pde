@@ -1,10 +1,10 @@
-class Enemy{
+class Land{
   
   float sizex,sizey;
   float x;
   float speed;
   
-  Enemy(float sizex, float sizey,float speed)
+  Land(float sizex, float sizey,float speed)
   {
     this.sizex=sizex;
     this.sizey=sizey;
@@ -14,7 +14,7 @@ class Enemy{
   
   void generate()
   {
-    fill(0);
+    fill(allc);
     rect(x,height*0.9166666-sizey/2,sizex,sizey);
   }
   
